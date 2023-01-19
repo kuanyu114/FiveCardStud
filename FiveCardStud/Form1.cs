@@ -35,6 +35,7 @@ namespace FiveCardStud
                 RankBox[i].DataSource = list;
                 RankBox[i].SelectedIndex = -1;
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,6 +59,17 @@ namespace FiveCardStud
                 item.CardRankNum = RankBox[i].SelectedIndex + 1;
                 item.CardSuitNum = SuitBox[i].SelectedIndex;
                 cards.Add(item);
+            }
+            
+            if (cards.GroupBy(n => new { n.CardSuitNum, n.CardRankNum }).Count() < 5)
+            {
+                MessageBox.Show("選擇的卡有重複");
+                return;
+            }
+            if(SuitBox.Any(n=>n.SelectedIndex ==-1)|| RankBox.Any(n => n.SelectedIndex == -1))
+            {
+                MessageBox.Show("選擇的卡有空白");
+                return;
             }
             var cardsResult = CardsFactory.GetCardGame("FiveCardStudGame").GetPokerHands(cards);
             MessageBox.Show("你手上的卡是"+cardsResult);
