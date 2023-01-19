@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiveCardStud", "FiveCardStud\FiveCardStud.csproj", "{6A338063-1E08-460D-8792-78416DE370D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiveCardStudTestProject", "FiveCardStudTestProject\FiveCardStudTestProject.csproj", "{70FE8B41-0741-4AD2-9306-F7E03C297915}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A338063-1E08-460D-8792-78416DE370D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A338063-1E08-460D-8792-78416DE370D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A338063-1E08-460D-8792-78416DE370D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A338063-1E08-460D-8792-78416DE370D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70FE8B41-0741-4AD2-9306-F7E03C297915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70FE8B41-0741-4AD2-9306-F7E03C297915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70FE8B41-0741-4AD2-9306-F7E03C297915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70FE8B41-0741-4AD2-9306-F7E03C297915}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {027348CD-33BF-4BF3-87D6-276874DD7B63}
+	EndGlobalSection
+EndGlobal
