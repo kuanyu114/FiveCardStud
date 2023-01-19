@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Suit1
@@ -133,7 +134,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 10;
-            this.button1.Text = "隨機發牌";
+            this.button1.Text = "隨機數發牌";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -192,11 +193,22 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Card5";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(94, 364);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(121, 23);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "整副撲克發牌";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 413);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -241,5 +253,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private Button button3;
     }
 }

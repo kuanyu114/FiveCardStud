@@ -35,12 +35,12 @@ namespace FiveCardStud
                 RankBox[i].DataSource = list;
                 RankBox[i].SelectedIndex = -1;
             }
-
+            allCards = new CardsModel().GetFullDeck();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var cards = CardsFactory.GetCardGame("FiveCardStudGame").Shuffing();
+            var cards = CardsFactory.GetCardGame("FiveCardStudGame").Shuffing(5);
             for (int i = 0; i < 5; i++)
             {
                 SuitBox[i].SelectedItem = cards[i].CardSuit;
@@ -73,6 +73,21 @@ namespace FiveCardStud
             }
             var cardsResult = CardsFactory.GetCardGame("FiveCardStudGame").GetPokerHands(cards);
             MessageBox.Show("你手上的卡是"+cardsResult);
+        }
+        List<CardsModel> allCards;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (allCards.Count() <3)
+            {
+                MessageBox.Show("洗牌");
+                allCards = CardsFactory.GetCardGame("FiveCardStudGame").ShuffingFullDeck();
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                SuitBox[i].SelectedItem = allCards[i].CardSuit;
+                RankBox[i].SelectedItem = allCards[i].CardRank;
+            }
+            allCards.RemoveRange(0, 5);
         }
     }
 }
