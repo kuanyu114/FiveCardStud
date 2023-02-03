@@ -49,8 +49,10 @@ namespace FiveCardStud.Service
         /// <returns></returns>
         public string GetPokerHands(List<CardsModel> cards )
         {
-            if (cards != null)
+            if (cards != null && cards.Count()>4)
                 Cards = cards;
+            else
+                new ArgumentNullException("牌不夠");
             string result = "";
             
             if (CheckCardSuit())//同花 
