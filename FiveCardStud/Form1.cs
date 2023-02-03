@@ -1,5 +1,6 @@
 using FiveCardStud.Enums;
 using FiveCardStud.Models;
+using FiveCardStud.Service;
 
 namespace FiveCardStud
 {
@@ -41,6 +42,7 @@ namespace FiveCardStud
         private void button1_Click(object sender, EventArgs e)
         {
             var cards = CardsFactory.GetCardGame("FiveCardStudGame").Shuffing(5);
+            cards = new FiveCardStudGame().Shuffing(5);
             for (int i = 0; i < 5; i++)
             {
                 SuitBox[i].SelectedItem = cards[i].CardSuit;
