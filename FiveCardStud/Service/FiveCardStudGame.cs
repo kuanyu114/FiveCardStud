@@ -49,7 +49,7 @@ namespace FiveCardStud.Service
         /// <returns></returns>
         public string GetPokerHands(List<CardsModel> cards )
         {
-            if (cards != null && cards.Count()>4)
+            if (cards != null && cards.Count()>1)
                 Cards = cards;
             else
                 new ArgumentNullException("牌不夠");
@@ -59,22 +59,22 @@ namespace FiveCardStud.Service
             {
                 if (CheckFlush())
                     result = "同花順";
-
-                result = "同花";
+               
+                result = result == "" ? "同花" : result;
             }
             else//非同花
             {
-                 if (CheckFlush())
+                if (CheckFlush())
                     result = "順子";
-                
+
+                if (CheckTwoPair())
+                    result = "兩對";
+
                 if (CheckFullHouse())
                     result = "葫蘆";
 
                 if (CheckThreeKind())
-                    result = "三條";
-
-                if (CheckTwoPair())
-                    result = "兩對";
+                    result = "三條";               
 
                 if (CheckPair())
                     result = "一對";
