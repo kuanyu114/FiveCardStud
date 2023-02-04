@@ -10,9 +10,12 @@ namespace FiveCardStud.Service
 {
     public class FiveCardStudGame 
     {
+        /// <summary>
+        /// 手上的牌
+        /// </summary>
         private List<CardsModel> Cards { get; set; }
         /// <summary>
-        /// 隨機發指定數量牌
+        /// 洗牌+發指定數量牌
         /// </summary>
         /// <returns></returns>
         public List<CardsModel> Shuffing(int number = 5)
