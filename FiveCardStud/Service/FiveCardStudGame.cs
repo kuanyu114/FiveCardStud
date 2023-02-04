@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FiveCardStud.Service
 {
-    public class FiveCardStudGame :ICardGame
+    public class FiveCardStudGame 
     {
         private List<CardsModel> Cards { get; set; }
         /// <summary>

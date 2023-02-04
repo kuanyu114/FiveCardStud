@@ -1,6 +1,7 @@
 using FiveCardStud.Enums;
 using FiveCardStud.Models;
 using FiveCardStud.Service;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace FiveCardStud
 {
@@ -12,6 +13,7 @@ namespace FiveCardStud
         }
         List<ComboBox> SuitBox;
         List<ComboBox> RankBox;
+        List<CardsModel> allCards;
         private void Form1_Load(object sender, EventArgs e)
         {
             SuitBox = new List<ComboBox>() { Suit1, Suit2, Suit3, Suit4, Suit5 };
@@ -36,18 +38,19 @@ namespace FiveCardStud
                 RankBox[i].DataSource = list;
                 RankBox[i].SelectedIndex = -1;
             }
-            allCards = new CardsModel().GetFullDeck();
+            //allCards = new CardsModel().GetFullDeck();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var cards = CardsFactory.GetCardGame("FiveCardStudGame").Shuffing(5);
-            cards = new FiveCardStudGame().Shuffing(5);
+            //var cards = CardsFactory.GetCardGame("FiveCardStudGame").Shuffing(5);
+            var cards = new FiveCardStudGame().Shuffing(5);
             for (int i = 0; i < 5; i++)
             {
                 SuitBox[i].SelectedItem = cards[i].CardSuit;
                 RankBox[i].SelectedItem = cards[i].CardRank;
             }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -73,16 +76,18 @@ namespace FiveCardStud
                 MessageBox.Show("選擇的卡有空白");
                 return;
             }
-            var cardsResult = CardsFactory.GetCardGame("FiveCardStudGame").GetPokerHands(cards);
+            //var cardsResult = CardsFactory.GetCardGame("FiveCardStudGame").GetPokerHands(cards);
+            var cardsResult = new FiveCardStudGame().GetPokerHands(cards);
             MessageBox.Show("你手上的卡是"+cardsResult);
         }
-        List<CardsModel> allCards;
+        
         private void button3_Click(object sender, EventArgs e)
         {
             if (allCards.Count() <3)
             {
                 MessageBox.Show("洗牌");
-                allCards = CardsFactory.GetCardGame("FiveCardStudGame").ShuffingFullDeck();
+                //allCards = CardsFactory.GetCardGame("FiveCardStudGame").ShuffingFullDeck();
+                allCards = new FiveCardStudGame().ShuffingFullDeck();
             }
             for (int i = 0; i < 5; i++)
             {

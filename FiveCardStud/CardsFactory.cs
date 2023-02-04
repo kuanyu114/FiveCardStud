@@ -14,7 +14,7 @@ namespace FiveCardStud
         static CardsFactory() 
         {
             _CardGame = new Dictionary<string, ICardGame>();
-            _CardGame.Add("FiveCardStudGame", new FiveCardStudGame());
+            //_CardGame.Add("FiveCardStudGame", new FiveCardStudGame());
         }
         public static ICardGame GetCardGame(string gameName)
         {
